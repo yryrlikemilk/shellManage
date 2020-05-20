@@ -10,8 +10,10 @@
           <!-- <el-table-column prop="explanation" label="描述" align="center" /> -->
           <el-table-column prop="imgUrl" label="图标" align="center">
             <template slot-scope="scope">
-              <div v-for="(item,index) in scope.row.imgUrl" :key="index">
-                <img v-if="item" :src="item" alt width="60">
+              <div class="imglist">
+                <div v-for="(item,index) in scope.row.imgUrl" :key="index">
+                  <img v-if="item" :src="item" alt width="60">
+                </div>
               </div>
             </template>
           </el-table-column>
@@ -242,5 +244,10 @@ export default {
 .el-pagination {
   text-align: right;
   margin: 20px 0;
+}
+.imglist{
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
 }
 </style>
